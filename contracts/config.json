@@ -1,0 +1,9 @@
+{
+"port": 8080,
+"logdir": "",	
+"dbhost": "172.16.0.30",
+"dbport":  1521,
+"database": "hydra",
+"dbuser": "ais_rpc",
+"dbpasswd": ""
+}

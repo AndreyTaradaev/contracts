@@ -1,0 +1,63 @@
+basePath: /
+definitions:
+  model.Contract:
+    properties:
+      begin:
+        type: string
+      dateHistory:
+        type: string
+      end:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      number:
+        type: string
+      owner:
+        type: integer
+      status:
+        type: integer
+      statusHistory:
+        type: integer
+    type: object
+info:
+  contact:
+    email: ataradaev@gmail.com
+    name: API Support
+  description: Получение списка  договоров из Биллинга
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Check Contract Hydra API
+  version: "1.0"
+paths:
+  /contracts:
+    get:
+      description: Список договоров  из Биллинга
+      operationId: List
+      parameters:
+      - description: начальная дата в формате YYYYMMDDHHMM (202301010101)
+        in: query
+        name: date
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Список договоров
+          schema:
+            items:
+              $ref: '#/definitions/model.Contract'
+            type: array
+        "500":
+          description: внутренняя ошибка сервера
+          schema:
+            type: string
+      summary: Get list contracts
+      tags:
+      - List
+swagger: "2.0"
+tags:
+- name: Contracts
